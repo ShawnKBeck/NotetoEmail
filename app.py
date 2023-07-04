@@ -2,7 +2,7 @@ import os
 import openai
 import streamlit as st
 
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+openai.api_key = "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"
 
 system_prompt = """
 You are a CEO of a software company and you have taken some casual notes.
