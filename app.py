@@ -2,7 +2,7 @@ import os
 import openai
 import streamlit as st
 
-openai.api_key = "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"
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 system_prompt = """
 You are a CEO of a software company and you have taken some casual notes.
