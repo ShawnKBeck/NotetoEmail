@@ -1,13 +1,6 @@
-#
-# Streamlit App
-#
-
 import os
-from dotenv import load_dotenv
 import openai
 import streamlit as st
-
-load_dotenv()
 
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
@@ -23,7 +16,7 @@ You want to pass a summary of these notes to your team in an email.
 
 - Disperse the notes in bullet points whenever possible
 
-- Be sure to include any action items in their own sectoin at the end
+- Be sure to include any action items in their own section at the end
 
 Reply with a sign off from the supplied username
 """
