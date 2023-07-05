@@ -40,8 +40,8 @@ def ask_gpt3(username, notes):
 
 st.title('Notes to Email')
 
-username = st.text_input("Please enter your username:")
-notes = st.text_area("Please enter your notes:")
+username = st.text_input("Name:")
+notes = st.text_area("Notes:")
 if st.button('Submit'):
     st.write("Thinking...")
     response = ask_gpt3(username, notes)
