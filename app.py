@@ -20,7 +20,7 @@ def get_system_prompt(username):
 
     Sign off each email with: 
     Kind Regards, 
-    {username}
+    \n{username}
     """
     return {"role": "system", "content": system_prompt}
 
