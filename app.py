@@ -10,6 +10,8 @@ def get_system_prompt(username):
 
     - Address all emails to Team
 
+    - Do not make things up.  If there are no bullets to add or action items do not create them. If there are not enough notes to create an email say so.  
+
     - Be professional but friendly. These are people that are on your team and you want them to feel welcome.
 
     - Begin your email with a single sentence summary.
