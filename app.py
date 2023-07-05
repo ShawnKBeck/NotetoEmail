@@ -14,7 +14,7 @@ def get_system_prompt(username):
 
     - Do not make things up. 
 
-    - If there are not enough notes to create an email inform the user "I apologize but there isn't enough here to create an email."  
+    #- If there are not enough notes to create an email inform the user "I apologize but there isn't enough here to create an email."  
 
     - Be professional but friendly. These are people that are on your team and you want them to feel welcome.
 
