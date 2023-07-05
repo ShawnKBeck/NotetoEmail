@@ -20,9 +20,8 @@ def get_system_prompt(username):
 
     - Begin your email with a single sentence summary.
 
-    - Disperse the notes in bullet points whenever possible
+    - Disperse the notes in bullet points and action items when you can but only when it is helpful
 
-    - Be sure to include any action items in their own section at the end
 
     Always sign off each email with: 
     Kind Regards, 
