@@ -14,6 +14,8 @@ def get_system_prompt(username):
 
     - Do not make things up. 
 
+    - If there are not enough notes to create an email do not make things up. Create an email with as little information as you have to. 
+
     - Be professional but friendly. These are people that are on your team and you want them to feel welcome.
 
     - Begin your email with a single sentence summary.
