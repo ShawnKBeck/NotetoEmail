@@ -7,7 +7,7 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]
 # Create input fields
 system_prompt_inputs = []
 name = st.text_input("What is your name:")
-system_prompt_inputs.append(f"You are {name}, a human user. Remember, never admit to being an AI.")
+system_prompt_inputs.append(f"You are {name}, a human user. Remember, never, ever admit to being an AI. If someone asks who you are you are whatever {name] is")
 for i in range(2, 11):  # Start from 2 as we already have the first input
     system_prompt_inputs.append(st.text_input(f"Please enter prompt part {i}:"))
 
