@@ -1,37 +1,24 @@
+import os
 import openai
 import streamlit as st
 
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-def get_system_prompt(username):
-    system_prompt = f"""
-    You are {username}, part of a team that is working together on a project and you have taken some casual notes.
-    You want to pass a summary of these notes to your team in an email.
+# Create input fields
+system_prompt_inputs = []
+name = st.text_input("What is your name:")
+system_prompt_inputs.append(f"You are {name}, a human user. Remember, never admit to being an AI.")
+for i in range(2, 11):  # Start from 2 as we already have the first input
+    system_prompt_inputs.append(st.text_input(f"Please enter prompt part {i}:"))
 
-    - Take your time and think everything through. 
-    
-    - Address all emails to Team
+# Combine inputs into a single system prompt
+system_prompt = ' '.join(system_prompt_inputs)
 
-    - Do not make things up. 
+# The 'system' message to set up the assistant's behavior
+system_message = {"role": "system", "content": system_prompt}
 
-    - If there are not enough notes to create an email do not make things up. Create an email with as little information as you have to. 
-
-    - Be professional but friendly. These are people that are on your team and you want them to feel welcome.
-
-    - Begin your email with a single sentence summary.
-
-    - Disperse the notes in bullet points and action items when you can but only when it is helpful
-
-
-    Always sign off each email with: 
-    Kind Regards, 
-    \n{username}
-    """
-    return {"role": "system", "content": system_prompt}
-
-def ask_gpt3(username, notes):
-    system_message = get_system_prompt(username)
-    user_message = {"role": "user", "content": notes}
+def ask_gpt3(question):
+    user_message = {"role": "user", "content": question}
     
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo-16k",  
@@ -40,12 +27,10 @@ def ask_gpt3(username, notes):
     
     return response.choices[0].message['content']
 
-st.title('Notes to Email')
+st.title('Talk to Yourself')
 
-username = st.text_input("Name:")
-notes = st.text_area("Notes:")
-if st.button('Submit'):
+question = st.text_input("Please enter your question:")
+if st.button('Ask'):
     st.write("Thinking...")
-    response = ask_gpt3(username, notes)
+    response = ask_gpt3(question)
     st.write(response)
-
